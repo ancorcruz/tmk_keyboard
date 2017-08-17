@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KEYMAP(
       SHIFT(KC_1), SHIFT(KC_2), KC_UP, SHIFT(KC_LBRC), SHIFT(KC_RBRC), KC_PGUP, KC_7, KC_8, KC_9, SHIFT(KC_8), \
       SHIFT(KC_3), KC_LEFT,     KC_DOWN, KC_RIGHT, SHIFT(KC_4), KC_PGDN, KC_4, KC_5, KC_6, SHIFT(KC_EQUAL), \
-      KC_LBRC,     KC_RBRC,     SHIFT(KC_9), SHIFT(KC_0), SHIFT(KC_7), KC_GRAVE, KC_1, KC_2, KC_3, KC_BSLS, \
+      KC_FN8,      KC_RBRC,     SHIFT(KC_9), SHIFT(KC_0), SHIFT(KC_7), KC_GRAVE, KC_1, KC_2, KC_3, KC_FN9, \
       KC_FN1,      SHIFT(KC_INS), KC_LGUI, KC_LSFT, KC_DEL, KC_LCTL, KC_LALT, KC_SPC, KC_FN0, KC_DOT, KC_0, KC_EQUAL
   ), \
 
@@ -38,8 +38,13 @@ const uint16_t PROGMEM fn_actions[] = {
 
   [4] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ESC),  // Escape when tapped, Left Control when held
   [5] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_ENT),  // Enter when tapped, Left Alt when held
-  [6] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_Z),    // Z when tapped, Left Shift when held
-  [7] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_SLSH), // Slash '/' when tapped, Right Shift when held
+  [6] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_Z),    // 'Z' when tapped, Left Shift when held
+  [7] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_SLSH), // '/' when tapped, Right Shift when held
+
+  [8] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_LBRC), // '[' when tapped, Left Shift when held
+
+  // This one looks useless, there is nothing useful on the momentary fn layer left hand when shift is held
+  [9] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSLS), // '\' when tapped, Right Shift when held
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
